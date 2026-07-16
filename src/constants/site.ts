@@ -3,7 +3,7 @@ export const SITE = {
   tagline: "Grow your brand with strategic web, social, design & video.",
   email: "theorbitxgrowthwithus@gmail.com",
   // TODO: replace with the real WhatsApp number in international format, digits only.
-  whatsappNumber: "919999999999",
+  whatsappNumber: "919350006474",
   url: "https://theorbitx.example",
   description:
     "The Orbit X is a digital agency helping small and growing businesses build web, social, design and video presence that converts.",
