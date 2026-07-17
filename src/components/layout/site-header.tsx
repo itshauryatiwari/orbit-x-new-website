@@ -1,3 +1,4 @@
+import logo from "@/assets/logo.jpg";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -24,10 +25,11 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2 font-display text-lg font-semibold">
-          <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-full bg-navy-gradient text-navy-foreground">
-            <span className="absolute inset-1 rounded-full border border-white/30" />
-            <span className="relative h-1.5 w-1.5 rounded-full bg-white" />
-          </span>
+          <img
+            src={logo}
+            alt="Orbit X Logo"
+            className="h-10 w-10 object-contain"
+          />
           <span>{SITE.name}</span>
         </Link>
 

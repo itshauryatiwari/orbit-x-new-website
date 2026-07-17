@@ -1,3 +1,4 @@
+import logo from "@/assets/logo.jpg";
 import { Link } from "@tanstack/react-router";
 import { Mail, MessageCircle } from "lucide-react";
 import { SITE, whatsappLink } from "@/constants/site";
@@ -10,9 +11,11 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 font-display text-lg font-semibold">
-              <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20">
-                <span className="h-1.5 w-1.5 rounded-full bg-white" />
-              </span>
+              <img
+                src={logo}
+                alt="Orbit X Logo"
+                className="h-10 w-10 object-contain"
+              />
               <span>{SITE.name}</span>
             </div>
             <p className="mt-4 max-w-xs text-sm text-white/70">
