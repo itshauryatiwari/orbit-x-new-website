@@ -21,7 +21,7 @@ export const SERVICE_PACKAGES: PackageGroup[] = [
       {
         name: "Launch",
         tagline: "One-page site to go live fast.",
-        price: "₹15,000",
+        price: "₹3,000",
         features: [
           "Up to 1 page (landing)",
           "Mobile-first responsive",
@@ -33,7 +33,7 @@ export const SERVICE_PACKAGES: PackageGroup[] = [
       {
         name: "Growth",
         tagline: "For serious small businesses.",
-        price: "₹35,000",
+        price: "₹7,000",
         featured: true,
         features: [
           "Up to 5 pages",
@@ -46,7 +46,7 @@ export const SERVICE_PACKAGES: PackageGroup[] = [
       {
         name: "Premium",
         tagline: "Scaled sites, CMS, integrations.",
-        price: "From ₹75,000",
+        price: "From ₹15,000",
         features: [
           "8+ pages / CMS",
           "Custom integrations",
@@ -64,20 +64,20 @@ export const SERVICE_PACKAGES: PackageGroup[] = [
       {
         name: "Starter",
         tagline: "For new brands finding their voice.",
-        price: "₹12,000/mo",
+        price: "₹5,000/mo",
         features: ["8 posts / month", "1 reel / week", "Captions & hashtags", "Monthly report"],
       },
       {
         name: "Growth",
         tagline: "Consistent presence and momentum.",
-        price: "₹25,000/mo",
+        price: "₹10,000/mo",
         featured: true,
         features: ["16 posts / month", "2 reels / week", "Content strategy", "Community replies"],
       },
       {
         name: "Premium",
         tagline: "Full-service, multi-platform.",
-        price: "₹45,000/mo",
+        price: "₹20,000/mo",
         features: ["Daily posting", "4 reels / week", "Multi-platform", "Dedicated manager"],
       },
     ],
@@ -89,20 +89,20 @@ export const SERVICE_PACKAGES: PackageGroup[] = [
       {
         name: "Starter",
         tagline: "On-demand creatives.",
-        price: "₹8,000/mo",
+        price: "₹5,000/mo",
         features: ["10 designs / month", "2-day turnaround", "Source files"],
       },
       {
         name: "Business",
         tagline: "For active brands.",
-        price: "₹18,000/mo",
+        price: "₹10,000/mo",
         featured: true,
         features: ["25 designs / month", "24h turnaround", "Ad creatives", "Brand system"],
       },
       {
         name: "Premium",
         tagline: "Unlimited creative support.",
-        price: "₹35,000/mo",
+        price: "₹20,000/mo",
         features: ["Unlimited requests", "Same-day priority", "Motion graphics"],
       },
     ],
@@ -114,20 +114,20 @@ export const SERVICE_PACKAGES: PackageGroup[] = [
       {
         name: "Starter",
         tagline: "Short-form starter pack.",
-        price: "₹10,000/mo",
+        price: "₹8,000/mo",
         features: ["8 reels / month", "Captions", "1 round revisions"],
       },
       {
         name: "Creator",
         tagline: "For creators & founders.",
-        price: "₹22,000/mo",
+        price: "₹16,000/mo",
         featured: true,
         features: ["16 reels / month", "Motion graphics", "Thumbnails", "2 revisions"],
       },
       {
         name: "Premium",
         tagline: "Full video production support.",
-        price: "₹40,000/mo",
+        price: "₹25,000/mo",
         features: ["Unlimited short-form", "Long-form edits", "Priority delivery"],
       },
     ],
@@ -138,7 +138,7 @@ export const BUNDLES: Package[] = [
   {
     name: "Brand Starter",
     tagline: "Graphics + Social",
-    price: "₹28,000/mo",
+    price: "₹20,000/mo",
     features: [
       "16 posts / month",
       "20 designs / month",
@@ -149,7 +149,7 @@ export const BUNDLES: Package[] = [
   {
     name: "Growth Accelerator",
     tagline: "Graphics + Social + Video",
-    price: "₹48,000/mo",
+    price: "₹30,000/mo",
     featured: true,
     features: [
       "20 posts / month",
@@ -161,7 +161,7 @@ export const BUNDLES: Package[] = [
   {
     name: "Complete Digital Presence",
     tagline: "Website + Social + Graphics + Video",
-    price: "From ₹75,000",
+    price: "From ₹40,000",
     features: [
       "Full website build",
       "Ongoing social + design",

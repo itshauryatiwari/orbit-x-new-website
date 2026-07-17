@@ -136,7 +136,7 @@ export function Home() {
         />
         <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
           {[
-            { n: "2", label: "Websites Built" },
+            { n: "2+", label: "Websites Built" },
             { n: "15+", label: "Creative Designs" },
             { n: "3+", label: "Reels Edited" },
             { n: "2", label: "Active Clients" },
