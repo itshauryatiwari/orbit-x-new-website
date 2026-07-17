@@ -179,63 +179,6 @@ export function Home() {
         </div>
       </Section>
 
-      {/* 5. Featured work */}
-      <Section className="bg-secondary/40">
-        <SectionHeading
-          eyebrow="Featured work"
-          title="Selected projects."
-          description="A small but growing portfolio across web, brand and video."
-        />
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          <Link
-            to="/work/$slug"
-            params={{ slug: PROJECTS[0].slug }}
-            className="group relative overflow-hidden rounded-3xl border border-border bg-navy-gradient p-8 text-navy-foreground shadow-elevated lg:col-span-2 lg:row-span-2"
-          >
-            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-orbit/40 blur-3xl" />
-            <span className="text-xs font-medium uppercase tracking-widest text-white/60">
-              Featured — {PROJECTS[0].category}
-            </span>
-            <h3 className="mt-3 max-w-md text-3xl font-semibold sm:text-4xl">
-              {PROJECTS[0].title}
-            </h3>
-            <p className="mt-4 max-w-md text-white/70">{PROJECTS[0].summary}</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {PROJECTS[0].tags.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full border border-white/20 px-3 py-1 text-xs text-white/80"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-            <span className="mt-10 inline-flex items-center gap-1 text-sm font-medium text-white">
-              View case <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </span>
-          </Link>
-          {PROJECTS.slice(1, 4).map((p) => (
-            <Link
-              key={p.slug}
-              to="/work/$slug"
-              params={{ slug: p.slug }}
-              className="group flex flex-col justify-between rounded-3xl border border-border bg-card p-6 shadow-soft transition-shadow hover:shadow-elevated"
-            >
-              <div>
-                <span className="text-[11px] font-medium uppercase tracking-widest text-orbit">
-                  {p.category}
-                </span>
-                <h3 className="mt-2 text-xl font-semibold">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{p.summary}</p>
-              </div>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-orbit">
-                View <ArrowRight className="h-3.5 w-3.5" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </Section>
-
       {/* 6. Process */}
       <Section>
         <SectionHeading
