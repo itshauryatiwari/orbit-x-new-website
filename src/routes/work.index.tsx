@@ -6,6 +6,7 @@ import { PROJECTS } from "@/data/projects";
 import { WebsitesExperience } from "@/components/work/websites-experience.tsx";
 import { DesignsExperience } from "@/components/work/DesignsExperience.tsx";
 import { cn } from "@/lib/utils";
+import { ReelsExperience } from "@/components/work/ReelsExperience.tsx";
 
 export const Route = createFileRoute("/work/")({
   head: () => ({
@@ -104,13 +105,8 @@ function WorkIndex() {
           ) : active.key === "design" ? (
             <DesignsExperience />
           ) : (
-            <div className="flex flex-1 flex-col items-center justify-center p-6 text-center">
-              <active.icon className="mx-auto h-10 w-10 text-orbit" />
-              <h2 className="mt-5 text-4xl font-semibold sm:text-5xl">{active.label}</h2>
-              <p className="mx-auto mt-4 max-w-md text-sm text-navy-foreground/70 sm:text-base">
-                Full {active.label.toLowerCase()} gallery in progress. Placeholder for the fullscreen experience.
-              </p>
-            </div>
+
+            <ReelsExperience />
           )}
         </div>
       )}
