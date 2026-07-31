@@ -1,45 +1,56 @@
+/**
+ * ============================================================================
+ * LEGACY COMPATIBILITY ADAPTER — DO NOT ADD PROJECTS HERE
+ * ============================================================================
+ *
+ * `src/data/portfolio.ts` is now the single source of truth for all
+ * portfolio content. This file exists only so existing consumers
+ * (`WebsitesExperience`, `DesignsExperience`, `ReelsExperience`, and the
+ * `/work` and `/work/$slug` routes) keep working unmodified — every value
+ * here is *derived* from `PORTFOLIO_ITEMS`, never authored directly.
+ *
+ * To add a new project, edit `src/data/portfolio.ts` — see the header
+ * comment there for the full workflow.
+ * ============================================================================
+ */
+import {
+  PORTFOLIO_ITEMS,
+  type PortfolioItem,
+  type PortfolioType,
+} from "@/data/portfolio";
+
 export interface Project {
   slug: string;
   title: string;
   category: "Web Development" | "Graphic Design" | "Video Editing";
   summary: string;
   tags: string[];
+  thumbnail?: string;
+  video?: string;
 }
 
-export const PROJECTS: Project[] = [
-  {
-    slug: "aurora-coaching",
-    title: "Aurora Coaching Website",
-    category: "Web Development",
-    summary:
-      "A conversion-focused site for a life coach — clear positioning, testimonial engine and integrated WhatsApp booking.",
-    tags: ["Landing page", "SEO", "WhatsApp"],
-  },
-  {
-    slug: "meridian-consulting",
-    title: "Meridian Consulting",
-    category: "Web Development",
-    summary:
-      "Business website for a boutique consulting firm with services, case studies and inquiry funnel.",
-    tags: ["Business site", "Case studies"],
-  },
-  {
-    slug: "brand-graphics-vol-1",
-    title: "Brand Graphics — Volume 1",
-    category: "Graphic Design",
-    summary:
-      "A curated set of the strongest brand creatives across social, ads and print for our early clients.",
-    tags: ["Social", "Ads", "Brand"],
-  },
-  {
-    slug: "reels-collection",
-    title: "Reels Collection",
-    category: "Video Editing",
-    summary:
-      "Selected short-form reels edited for coaches and D2C brands — hooks, motion titles, and captions.",
-    tags: ["Reels", "Short-form"],
-  },
-];
+/** Maps the new taxonomy to the legacy category labels the UI renders. */
+const TYPE_TO_LEGACY_CATEGORY: Record<PortfolioType, Project["category"]> = {
+  website: "Web Development",
+  "graphic-design": "Graphic Design",
+  reel: "Video Editing",
+};
+
+function toLegacyProject(item: PortfolioItem): Project {
+  return {
+    slug: item.slug,
+    title: item.title,
+    category: TYPE_TO_LEGACY_CATEGORY[item.type],
+    summary: item.shortDescription,
+    tags: item.tags,
+    thumbnail: item.thumbnail,
+    video: item.video,
+  };
+}
+
+export const PROJECTS: Project[] = [...PORTFOLIO_ITEMS]
+  .sort((a, b) => a.order - b.order)
+  .map(toLegacyProject);
 
 export function getProject(slug: string) {
   return PROJECTS.find((p) => p.slug === slug);
