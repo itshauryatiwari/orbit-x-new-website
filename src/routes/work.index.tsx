@@ -3,7 +3,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Globe, Palette, Clapperboard, X } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { PROJECTS } from "@/data/projects";
-import { WebsitesExperience } from "@/components/work/websites-experience";
+import { WebsitesExperience } from "@/components/work/websites-experience.tsx";
+import { DesignsExperience } from "@/components/work/DesignsExperience.tsx";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/work/")({
@@ -100,6 +101,8 @@ function WorkIndex() {
 
           {active.key === "web" ? (
             <WebsitesExperience />
+          ) : active.key === "design" ? (
+            <DesignsExperience />
           ) : (
             <div className="flex flex-1 flex-col items-center justify-center p-6 text-center">
               <active.icon className="mx-auto h-10 w-10 text-orbit" />
