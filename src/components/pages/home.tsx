@@ -289,20 +289,6 @@ export function Home() {
         </div>
       </Section>
 
-      {/* 9. Logos */}
-      <Section className="py-14">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Businesses we've worked with
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-8 opacity-70">
-          {["AURORA", "MERIDIAN", "NORTHWIND"].map((n) => (
-            <span key={n} className="font-display text-xl font-semibold tracking-widest text-navy">
-              {n}
-            </span>
-          ))}
-        </div>
-      </Section>
-
       {/* 10. Final CTA */}
       <Section>
         <div className="rounded-3xl border border-border bg-card p-10 text-center shadow-elevated sm:p-16">
