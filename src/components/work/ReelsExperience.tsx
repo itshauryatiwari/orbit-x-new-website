@@ -124,10 +124,10 @@ function ReelViewer({
       )}
 
       <div
-        className="flex max-h-full w-full max-w-sm flex-col items-center"
+        className="flex h-full w-full items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative aspect-[9/16] w-full max-h-[75vh] overflow-hidden rounded-3xl border border-white/10 bg-navy shadow-elevated">
+        <div className="relative h-[90vh] aspect-[9/16] max-w-md overflow-hidden rounded-3xl border border-white/10 bg-navy shadow-elevated">
           {reel.video ? (
             <video
               key={reel.slug}
@@ -151,25 +151,6 @@ function ReelViewer({
               </div>
             </div>
           )}
-        </div>
-        <div className="mt-6 w-full text-center">
-          <span className="text-[11px] font-medium uppercase tracking-widest text-orbit">
-            {reel.category}
-          </span>
-          <h3 className="mt-2 text-2xl font-semibold text-navy-foreground sm:text-3xl">
-            {reel.title}
-          </h3>
-          <p className="mx-auto mt-2 max-w-xl text-sm text-navy-foreground/70">{reel.summary}</p>
-          <div className="mt-4 flex flex-wrap justify-center gap-1.5">
-            {reel.tags.map((t) => (
-              <span
-                key={t}
-                className="rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] text-navy-foreground/80"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </div>
