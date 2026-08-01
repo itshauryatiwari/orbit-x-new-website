@@ -136,13 +136,13 @@ export interface PortfolioItem {
     longDescription?: string;
 
     /** Path relative to /public, e.g. "/portfolio/websites/aurora-coaching/thumbnail.jpg". */
-    thumbnail: string;
+    thumbnail?: string;
     /** Additional images, e.g. for lightboxes/case studies. */
     gallery?: string[];
     /** Path or URL to a video file (reels, or a website walkthrough). */
     video?: string;
 
-    liveUrl?: string;
+    websiteUrl?: string;
     githubUrl?: string;
 
     /** Escape hatch for anything not yet modeled — see `PortfolioMetadata`. */
@@ -155,20 +155,21 @@ export interface PortfolioItem {
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     {
-        slug: "aurora-coaching",
-        title: "Aurora Coaching Website",
+        slug: "Trikaya-MUN",
+        title: "Trikaya MUN",
         type: "website",
         category: "Landing page",
         featured: true,
         order: 1,
-        client: "Aurora Coaching",
-        date: "2024-11-01",
+        client: "Trikaya MUN",
+        date: "2026-6-18",
         tags: ["Landing page", "SEO", "WhatsApp"],
         technologies: ["React", "Tailwind CSS", "Remix"],
         shortDescription:
-            "A conversion-focused site for a life coach — clear positioning, testimonial engine and integrated WhatsApp booking.",
-        thumbnail: "/portfolio/websites/aurora-coaching/thumbnail.jpg",
-        gallery: [],
+            "More than a conference — a movement of ideas, voices, and change-makers. Held on United Nations Day.",
+        thumbnail: "public/portfolio/websites/Trikaya-MUN/Trikaya-MUN.png",
+        gallery: [ "public/portfolio/websites/Trikaya-MUN/Trikaya-MUN.png" ],
+        websiteUrl: "https://trikayamun.in",
     },
     {
         slug: "meridian-consulting",
@@ -223,6 +224,51 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     shortDescription: "A reel project for OrbitX.",
     thumbnail: "public/portfolio/reels/orbitx-reel/thumbnail.png",
     video: "public/portfolio/reels/orbitx-reel/0630.mp4"
+    },
+
+    {
+        slug: "Samvaad-MUN",
+        title: "Samvaad MUN committees and agendas",
+        type: "graphic-design",
+        category: "Graphic Design",
+        featured: true,
+        order: 2,
+        date: "2025-09-01",
+        tags: ["Social", "Ads", "Brand"],
+        shortDescription:
+            "A curated set of the strongest brand creatives across social, announcement instagram post.",
+        thumbnail: "public/portfolio/graphic-designs/Tanmay-design/design2.jpeg",
+        gallery: ["/portfolio/graphic-designs/Tanmay-design/design2.jpeg"],
+    },
+
+    {
+        slug: "Trikaya-MUN",
+        title: "Trikaya MUN committees and agendas",
+        type: "graphic-design",
+        category: "Graphic Design",
+        featured: true,
+        order: 3,
+        date: "2025-09-01",
+        tags: ["Social", "Ads", "Brand"],
+        shortDescription:
+            "A curated set of the strongest brand creatives across social, announcement instagram post.",
+        thumbnail: "public/portfolio/graphic-designs/Tanmay-design/design3.jpeg",
+        gallery: ["/portfolio/graphic-designs/Tanmay-design/design3.jpeg"],
+    },
+
+    {
+        slug: "Renaissance-MUN",
+        title: "Renaissance MUN committees and agendas",
+        type: "graphic-design",
+        category: "Graphic Design",
+        featured: true,
+        order: 4,
+        date: "2025-09-01",
+        tags: ["Social", "Ads", "Brand"],
+        shortDescription:
+            "A curated set of the strongest brand creatives across social, announcement instagram post.",
+        thumbnail: "public/portfolio/graphic-designs/Tanmay-design/design4.jpeg",
+        gallery: ["/portfolio/graphic-designs/Tanmay-design/design4.jpeg"],
     },
 ];
 

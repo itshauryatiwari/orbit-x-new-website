@@ -27,6 +27,7 @@ export interface Project {
   tags: string[];
   thumbnail?: string;
   video?: string;
+  websiteUrl?: string;
 }
 
 /** Maps the new taxonomy to the legacy category labels the UI renders. */
@@ -45,6 +46,7 @@ function toLegacyProject(item: PortfolioItem): Project {
     tags: item.tags,
     thumbnail: item.thumbnail,
     video: item.video,
+    websiteUrl: item.websiteUrl,
   };
 }
 
