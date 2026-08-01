@@ -6,16 +6,38 @@ import { cn } from "@/lib/utils";
 const DESIGNS = PROJECTS.filter((p) => p.category === "Graphic Design");
 
 /**
- * Deterministic preview treatment for each design card.
- * The current data source doesn't ship real artwork URLs, so — same as
- * WebsitesExperience does with its Globe icon on an orbit-gradient tile —
- * each design gets a brand-gradient preview with a Palette mark. Swapping in
- * real imagery later is a one-line change (render `design.image` instead).
+ * Preview treatment for each design card. Renders the design's real
+ * thumbnail image when one is available; falls back to a brand-gradient
+ * tile with a Palette mark (same treatment WebsitesExperience uses with
+ * its Globe icon) if no thumbnail exists or the image fails to load.
  */
 const PREVIEW_VARIANTS = ["bg-orbit-gradient", "bg-navy-gradient"] as const;
 
-function DesignPreview({ index, className }: { index: number; className?: string }) {
+function DesignPreview({
+  design,
+  index,
+  className,
+}: {
+  design: Project;
+  index: number;
+  className?: string;
+}) {
+  const [errored, setErrored] = useState(false);
   const variant = PREVIEW_VARIANTS[index % PREVIEW_VARIANTS.length];
+
+  if (design.thumbnail && !errored) {
+    return (
+      <div className={cn("overflow-hidden", className)}>
+        <img
+          src={design.thumbnail}
+          alt={design.title}
+          onError={() => setErrored(true)}
+          className="h-full w-full object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className={cn("flex items-center justify-center", variant, className)}>
       <Palette className="h-10 w-10 text-orbit-foreground/80" strokeWidth={1.5} />
@@ -118,6 +140,7 @@ function DesignLightbox({
         onClick={(e) => e.stopPropagation()}
       >
         <DesignPreview
+          design={design}
           index={index}
           className="aspect-[4/3] w-full max-h-[65vh] overflow-hidden rounded-3xl border border-white/10 shadow-elevated"
         />
@@ -170,6 +193,7 @@ export function DesignsExperience() {
               className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-left shadow-elevated transition-shadow duration-300 hover:shadow-glow"
             >
               <DesignPreview
+                design={design}
                 index={i}
                 className="absolute inset-0 h-full w-full transition-transform duration-500 ease-out group-hover:scale-110"
               />
