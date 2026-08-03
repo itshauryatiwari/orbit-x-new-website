@@ -172,19 +172,20 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
         websiteUrl: "https://trikayamun.in",
     },
     {
-        slug: "meridian-consulting",
-        title: "Meridian Consulting",
+        slug: "Gplus-Energy-Solution",
+        title: "Gplus Energy Solution",
         type: "website",
         category: "Business site",
         order: 2,
-        client: "Meridian Consulting",
+        client: "Gplus Energy Solution",
         date: "2024-08-15",
         tags: ["Business site", "Case studies"],
         technologies: ["React", "Tailwind CSS", "Remix"],
         shortDescription:
-            "Business website for a boutique consulting firm with services, case studies and inquiry funnel.",
-        thumbnail: "/portfolio/websites/meridian-consulting/thumbnail.jpg",
+            "Powering Homes & Businesses with Clean, Reliable Solar Energy",
+        thumbnail: "/portfolio/websites/gplus/gplus.png",
         gallery: [],
+        websiteUrl: "https://gplusenergysoultion.netlify.app/"
     },
     {
         slug: "Samvaad-MUN",
